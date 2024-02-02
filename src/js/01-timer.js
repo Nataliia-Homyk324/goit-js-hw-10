@@ -27,7 +27,7 @@ const options = {
         timeout: false, closeOnEscape: true,
         messageSize: 16,
         messageColor: '	#000000',
-        backgroundColor: '#FF4500',
+        backgroundColor: '#ef4040',
         title: 'Error',
         titleSize: 16,
         titleColor: '	#000000',

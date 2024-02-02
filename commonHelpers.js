@@ -1,0 +1,2 @@
+import"./assets/modulepreload-polyfill-ec808ebb.js";/* empty css                      */import{f as o}from"./assets/vendor-992cd48f.js";let e,t=document.getElementById("start-button");const l={enableTime:!0,time_24hr:!0,defaultDate:new Date,minuteIncrement:1,onClose(a){e=a[0],console.log(e),e<new Date?(alert("Please choose a date in the future"),t.disabled=!0):t.disabled=!1}};o("#datetime-picker",l);
+//# sourceMappingURL=commonHelpers.js.map

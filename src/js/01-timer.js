@@ -1,8 +1,16 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 
+import iziToast from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
+
 let userSelectedDate;// Declaring the variable outside of onClose() method
-let startButton = document.getElementById("start-button"); // Assuming the start button has an id of "start-button"
+let startButton = document.querySelector(".start"); 
+
+startButton.disabled = true;
+startButton.classList.add('inactive');
+startButton.classList.remove('active');
+
 
 const options = {
   enableTime: true,
@@ -11,17 +19,35 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
      userSelectedDate = selectedDates[0];
-    console.log(userSelectedDate);
+     console.log(userSelectedDate);
     if (userSelectedDate < new Date()) {
-      alert("Please choose a date in the future");
-      startButton.disabled = true; // Disabling the start button
+      iziToast.error({
+        message: "Please choose a date in the future",
+        width: 300, height: 64, position: "topRight",
+        timeout: false, closeOnEscape: true,
+        messageSize: 16,
+        messageColor: '	#000000',
+        backgroundColor: '#FF4500',
+        title: 'Error',
+        titleSize: 16,
+        titleColor: '	#000000',
+        iconColor: "#fff",
+      })
+      startButton.disabled = true;
+      startButton.classList.remove('active');
+      startButton.classList.add('inactive');
     } else {
-      startButton.disabled = false; // Enabling the start button
+      startButton.disabled = false;
+      startButton.classList.remove('inactive');
+      startButton.classList.add('active');
     }
   },
 };
 
 flatpickr("#datetime-picker", options); 
+
+
+
 
 
 

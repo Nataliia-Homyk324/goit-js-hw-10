@@ -24,7 +24,7 @@
   -webkit-text-size-adjust: 100%;
 }
 .wrapper{
-  margin-top: 100px;
+  
   text-align: center;
   font-family: Montserrat;
     font-weight: 400;
@@ -45,23 +45,36 @@
   flex-direction: column;
   gap: 12px;
 }
-.start-button{
+
+.start{
   border-radius: 8px;
-    padding: 8px 16px;
-    width: 75px;
-    height: 44px;
+  border: none;
+  padding: 8px 16px;
+  width: 75px;
+  height: 44px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+
+}
+.active{
+  
     background: #4e75ff;
-    border: none;
-    font-weight: 500;
-      font-size: 16px;
-      line-height: 150%;
-      letter-spacing: 0.04em;
-      color: #fff;
+    color: #fff;
 }
 
-.start-button:hover {
+.active:hover {
   background: #6c8cff;
+  color: #fff;
 }
+
+.inactive{
+  background: #cfcfcf;
+  color: #989898;
+    
+}
+
 .inp{
   width: 272px;
   height: 40px;

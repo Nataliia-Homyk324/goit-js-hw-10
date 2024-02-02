@@ -45,7 +45,7 @@
   flex-direction: column;
   gap: 12px;
 }
-.btn{
+.start-button{
   border-radius: 8px;
     padding: 8px 16px;
     width: 75px;
@@ -59,13 +59,19 @@
       color: #fff;
 }
 
-.btn:hover {
+.start-button:hover {
   background: #6c8cff;
 }
 .inp{
   width: 272px;
   height: 40px;
   border-radius: 8px;
+  padding-left: 16px;
+  font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
  
 }
 .value{

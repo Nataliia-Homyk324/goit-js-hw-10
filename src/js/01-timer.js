@@ -7,7 +7,7 @@ import "izitoast/dist/css/iziToast.min.css";
 
 
 
-let userSelectedDate = null;// Declaring the variable outside of onClose() method
+let userSelectedDate;// Declaring the variable outside of onClose() method
 let startButton = document.querySelector(".start"); 
 
 startButton.disabled = true;
@@ -23,13 +23,13 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     userSelectedDate = selectedDates[0];
-    console.log(userSelectedDate);
+    //  console.log(userSelectedDate);
     
      if (userSelectedDate < new Date()) {
       iziToast.error({
         message: "Please choose a date in the future",
         width: 300, height: 64, position: "topRight",
-        timeout: false, closeOnEscape: true,
+        timeout: 5000, closeOnEscape: true,
         messageSize: 16,
         messageColor: '	#fff',
         backgroundColor: '#ef4040',
@@ -50,9 +50,9 @@ const options = {
   },
 };
 
-flatpickr("#datetime-picker", options); 
+// flatpickr("#datetime-picker", options); 
 
-
+console.log(userSelectedDate);
 function convertMs(ms) {
   // Number of milliseconds per unit of time
   const second = 1000;

@@ -91,12 +91,16 @@ function onTimerStart() {
     const startTime = new Date();// визначаєм поточну дату
     const countdown = userSelectedDate - startTime;//залишок часу
     // змінюємо стан кнопки та рядка введення 
-    startButton.disabled = true;// кнопка старт стає неактивна
+      startButton.disabled = true;// кнопка старт стає неактивна
+      startButton.classList.add('inactive');
+      startButton.classList.remove('active');
     input.disabled = true;// рядок  введення стає неактивним
     if (countdown < 0) {
       clearInterval(timerId);// припинення виконання повторюваних дій, які були запущені за допомогою функції setInterval()
       input.disabled = false;//рядок введення стає активним для вибору нового часу
       startButton.disabled = false;// кнопка стає активною
+      startButton.classList.add('active');
+      startButton.classList.remove('inactive');
       return;// залишок часу стає 0, функція припиняє роботу
     }
     updateTimerFace(convertMs(countdown));// викликаєм функцію для зміни показів таймера на сторінці
